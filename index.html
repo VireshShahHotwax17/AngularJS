@@ -7,8 +7,13 @@
     <link href="styles/style.css" type="text/css" />
     <script src="node_modules/angular/angular.min.js"></script>
 </head>
-<body>
+<body ng-init="foods=['Paav Bhaji', 'Vada Pav', 'Pani Puri', 'Chole Bhature']">
     <input type="text" placeholder="Enter your favourite food" ng-model="favFood" />
     <p>Your favourite food is: {{ favFood }}</p>
+    <!-- Expression in angular -->
+    <p>You should also try:</p>
+    <ul>
+        <li ng-repeat="food in foods">{{ food }}</li>
+    </ul>
 </body>
 </html>
