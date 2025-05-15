@@ -10,9 +10,9 @@
 </head>
 <body>
     <div ng-controller="MyController">
-        {{ message }}
+        <input type="text" ng-model="search" />
         <ul>
-            <li ng-repeat="ninja in ninjas">{{ ninja }}</li>
+            <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search">{{ ninja.name }}</li>
         </ul>
     </div>
 </body>

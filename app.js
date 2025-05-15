@@ -9,6 +9,31 @@ var myApp = angular.module("myapp", []);
 
 // Declaring the controllers
 myApp.controller("MyController", ["$scope", function($scope){
-    $scope.message = "This is my first implementation of the controller";
-    $scope.ninjas = ["Naruto", "Kakashi", "Itachi", "Sasuke", "Might Guy", "Obito"];
+    $scope.ninjas = [
+        {
+            name: "Naruto",
+            chakra: "Wind",
+            rank: "Hokage"
+        }, 
+        {
+            name: "Kakashi",
+            chakra: "All",
+            rank: "Legend"
+        },
+        {
+            name: "Itachi",
+            chakra: "Fire",
+            rank: "Legend"
+        },
+        {
+            name: "Might Guy",
+            chakra: "7 gates opening",
+            rank: "Jonin"
+        },
+        {
+            name: "Gaara",
+            chakra: "Sand",
+            rank: "Chunin"
+        }
+    ];
 }]);
