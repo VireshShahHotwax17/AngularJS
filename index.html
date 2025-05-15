@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,12 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-init="foods=['Paav Bhaji', 'Vada Pav', 'Pani Puri', 'Chole Bhature']">
-    <input type="text" placeholder="Enter your favourite food" ng-model="favFood" />
-    <p>Your favourite food is: {{ favFood }}</p>
-    <!-- Expression in angular -->
-    <p>You should also try:</p>
-    <ul>
-        <li ng-repeat="food in foods">{{ food }}</li>
-    </ul>
+<body>
+    <div ng-controller="MyController">
+        {{ message }}
+        <ul>
+            <li ng-repeat="ninja in ninjas">{{ ninja }}</li>
+        </ul>
+    </div>
 </body>
 </html>
