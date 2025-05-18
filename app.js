@@ -41,4 +41,9 @@ myApp.controller("MyController", ["$scope", function($scope){
             availabel: false
         }
     ];
+
+    $scope.removeNinja = function(ninja){
+        var removedNinja = $scope.ninjas.indexOf(ninja);
+        $scope.ninjas.splice(removedNinja, 1);
+    };
 }]);

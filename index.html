@@ -12,9 +12,16 @@
     <header ng-include="'header.html'"></header>
     <div class="content">
         <div ng-controller="MyController" style="padding-top: 15px;">
+            <button ng-click="order = 'name' ">Order By Name</button>
+            <button ng-click="order = 'rank' ">Order by Rank</button>
             <input type="text" ng-model="search" placeholder="Search for ninjas" />
             <ul>
-                <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search" ng-show="ninja.availabel">{{ ninja.name }}</li>
+                <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.availabel">
+                    <h3>{{ ninja.name }}</h3>
+                    <div class="remove" ng-click="removeNinja(ninja)">x</div>
+                    <span>{{ ninja.rank }} rank</span>
+                </li>
+                
             </ul>
         </div>
     </div>
