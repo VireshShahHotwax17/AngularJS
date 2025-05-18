@@ -13,27 +13,32 @@ myApp.controller("MyController", ["$scope", function($scope){
         {
             name: "Naruto",
             chakra: "Wind",
-            rank: "Hokage"
+            rank: "Hokage",
+            availabel: true
         }, 
         {
             name: "Kakashi",
             chakra: "All",
-            rank: "Legend"
+            rank: "Legend",
+            availabel: true
         },
         {
             name: "Itachi",
             chakra: "Fire",
-            rank: "Legend"
+            rank: "Legend",
+            availabel: false
         },
         {
             name: "Might Guy",
             chakra: "7 gates opening",
-            rank: "Jonin"
+            rank: "Jonin",
+            availabel: true
         },
         {
             name: "Gaara",
             chakra: "Sand",
-            rank: "Chunin"
+            rank: "Chunin",
+            availabel: false
         }
     ];
 }]);

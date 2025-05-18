@@ -9,12 +9,14 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <ng-include src="'header.html'"></ng-include>
-    <div ng-controller="MyController" style="padding-top: 15px;">
-        <input type="text" ng-model="search" />
-        <ul>
-            <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search">{{ ninja.name }}</li>
-        </ul>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+        <div ng-controller="MyController" style="padding-top: 15px;">
+            <input type="text" ng-model="search" placeholder="Search for ninjas" />
+            <ul>
+                <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search" ng-show="ninja.availabel">{{ ninja.name }}</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
