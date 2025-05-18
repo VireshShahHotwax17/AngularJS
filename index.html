@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular JS tutorial</title>
-    <link href="styles/style.css" type="text/css" />
+    <link rel="stylesheet" href="styles/styles.css">
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
-    <div ng-controller="MyController">
+    <ng-include src="'header.html'"></ng-include>
+    <div ng-controller="MyController" style="padding-top: 15px;">
         <input type="text" ng-model="search" />
         <ul>
             <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search">{{ ninja.name }}</li>
