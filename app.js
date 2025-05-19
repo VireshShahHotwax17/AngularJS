@@ -46,4 +46,17 @@ myApp.controller("MyController", ["$scope", function($scope){
         var removedNinja = $scope.ninjas.indexOf(ninja);
         $scope.ninjas.splice(removedNinja, 1);
     };
+
+    $scope.addNinja = function(){
+        $scope.ninjas.push({
+            name: $scope.newninja.name,
+            chakra: $scope.newninja.chakra,
+            rank: $scope.newninja.rank,
+            availabel: true
+        });
+
+        $scope.newninja.name = "";
+        $scope.newninja.chakra = "";
+        $scope.newninja.rank = "";
+    };
 }]);

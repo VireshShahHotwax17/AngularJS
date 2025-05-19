@@ -21,8 +21,13 @@
                     <div class="remove" ng-click="removeNinja(ninja)">x</div>
                     <span>{{ ninja.rank }} rank</span>
                 </li>
-                
             </ul>
+            <form ng-submit="addNinja()">
+                <input type="text" placeholder="Ninja's Name" ng-model="newninja.name" />
+                <input type="text" placeholder="Ninja's Chakra" ng-model="newninja.chakra" />
+                <input type="text" placeholder="Ninja's Rank" ng-model="newninja.rank" />
+                <input type="submit" value="Add new Ninja" />
+            </form>
         </div>
     </div>
 </body>
