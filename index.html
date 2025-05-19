@@ -17,6 +17,7 @@
             <input type="text" ng-model="search" placeholder="Search for ninjas" />
             <ul>
                 <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.availabel">
+                    <img ng-src="{{ ninja.thumb }}" style="margin: -12px 10px 0px 0px; float: left; width: 50px;" ng-show="ninja.thumb">
                     <h3>{{ ninja.name }}</h3>
                     <div class="remove" ng-click="removeNinja(ninja)">x</div>
                     <span>{{ ninja.rank }} rank</span>
