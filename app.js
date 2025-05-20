@@ -1,8 +1,20 @@
 // Creating a module
-var myApp = angular.module("myapp", []);
+var myApp = angular.module("myapp", ['ngRoute']);
 
 // Setting up the configurations that are required just before our application run
-// myApp.config(function(){});
+myApp.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+    .when('/home', {
+        templateUrl: 'views/home.html'
+    })
+    .when('/directory', {
+        templateUrl: 'views/directory.html',
+        controller: 'MyController'
+    })
+    .otherwise({
+        redirectTo: '/home'
+    })
+}]);
 
 // Function to set-up when our application runs
 // myApp.run(function(){});
