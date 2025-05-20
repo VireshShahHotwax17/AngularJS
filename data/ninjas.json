@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Naruto",
+        "chakra": "Wind",
+        "rank": "Hokage",
+        "availabel": true,
+        "thumb": "images/ninja-1.jpg"
+    },
+    {
+        "name": "Kakashi",
+        "chakra": "All",
+        "rank": "Legend",
+        "availabel": true,
+        "thumb": "images/ninja-2.jpg"
+    },
+    {
+        "name": "Itachi",
+        "chakra": "Fire",
+        "rank": "Legend",
+        "availabel": false,
+        "thumb": "images/ninja-4.jpg"
+    },
+    {
+        "name": "Might Guy",
+        "chakra": "7 gates opening",
+        "rank": "Jonin",
+        "availabel": true,
+        "thumb": "images/ninja-3.jpg"
+    },
+    {
+        "name": "Gaara",
+        "chakra": "Sand",
+        "rank": "Chunin",
+        "availabel": false
+    }
+]

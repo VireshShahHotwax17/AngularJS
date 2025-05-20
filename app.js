@@ -21,44 +21,8 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 // myApp.run(function(){});
 
 // Declaring the controllers
-myApp.controller("MyController", ["$scope", function($scope){
-    $scope.ninjas = [
-        {
-            name: "Naruto",
-            chakra: "Wind",
-            rank: "Hokage",
-            availabel: true,
-            thumb: "images/ninja-1.jpg"
-        }, 
-        {
-            name: "Kakashi",
-            chakra: "All",
-            rank: "Legend",
-            availabel: true,
-            thumb: "images/ninja-2.jpg"
-        },
-        {
-            name: "Itachi",
-            chakra: "Fire",
-            rank: "Legend",
-            availabel: false,
-            thumb: "images/ninja-4.jpg"
-        },
-        {
-            name: "Might Guy",
-            chakra: "7 gates opening",
-            rank: "Jonin",
-            availabel: true,
-            thumb: "images/ninja-3.jpg"
-        },
-        {
-            name: "Gaara",
-            chakra: "Sand",
-            rank: "Chunin",
-            availabel: false
-        }
-    ];
-
+myApp.controller("MyController", ["$scope", "$http", function($scope, $http){
+    
     $scope.removeNinja = function(ninja){
         var removedNinja = $scope.ninjas.indexOf(ninja);
         $scope.ninjas.splice(removedNinja, 1);
@@ -76,4 +40,10 @@ myApp.controller("MyController", ["$scope", function($scope){
         $scope.newninja.chakra = "";
         $scope.newninja.rank = "";
     };
+
+    $http.get('data/ninjas.json').then(function(response) {
+        $scope.ninjas = response.data;
+    }, function(error) {
+        console.error('Error loading data:', error);
+    });
 }]);
