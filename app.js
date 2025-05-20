@@ -6,7 +6,8 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     $locationProvider.html5Mode(true); // Enables clean url
     $routeProvider
     .when('/home', {
-        templateUrl: 'views/home.html'
+        templateUrl: 'views/home.html',
+        controller: 'MyController'
     })
     .when('/directory', {
         templateUrl: 'views/directory.html',
@@ -46,4 +47,18 @@ myApp.controller("MyController", ["$scope", "$http", function($scope, $http){
     }, function(error) {
         console.error('Error loading data:', error);
     });
+}]);
+
+myApp.directive('randomNinja', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            ninjas: "=",
+            title: "="
+        }, 
+        templateUrl: "views/randomninja.html",
+        controller: function($scope){
+            $scope.random = Math.floor(Math.random() * 4);
+        },
+    };
 }]);
